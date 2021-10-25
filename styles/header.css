@@ -1,0 +1,101 @@
+header{
+    color: #FFFFFF;
+    display: grid;
+    font-size: 1.2rem;
+    grid-template-areas: 
+        "icon logo ."
+        "menu menu menu";
+    grid-template-columns: 25% 50% 25%;
+    grid-row: auto auto;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 80%;
+}
+
+header a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+header h1{
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 600;
+    grid-area: logo;
+    justify-self: center;
+    padding: 1rem 0;
+}
+
+header img{
+    align-self: center;
+    grid-area: icon;
+    padding: 1rem 0;
+    width: 2rem;
+}
+
+header img:hover{
+    cursor: pointer;
+}
+
+nav{
+    font-weight: 300;
+    grid-area: menu;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a{
+    display: block;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+nav li:hover{
+    background-color: #FFFFFF;
+}
+
+nav li:hover a{
+    color: #A64938;
+}
+
+#header-container{
+    background-color: #A64938;
+}
+
+.active{
+    font-weight: 600;
+}
+
+@media(min-width: 1000px){
+    header{
+        grid-template-areas: 
+            ". logo ."
+            "menu menu menu";
+        grid-template-rows: 1fr 1fr;
+        padding: 0.75rem 5rem 0;
+    }
+
+    header h1{
+        padding: 0;
+    }
+
+    header img{
+        display: none;
+        padding: 0;
+    }
+
+    nav{
+        grid-area: menu;
+        height: 100% !important; 
+        margin: 0 auto;
+    }
+
+    nav ul li{
+        display: inline-block;
+        text-align: center;
+        width: 6.5rem;
+    }
+}
+

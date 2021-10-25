@@ -1,0 +1,18 @@
+html{
+    font-family: Catamaran;
+}
+
+.button{
+    background-color: #A64938 !important;
+    color: #FFFFFF;
+    display: block;
+    font-size: 1.5rem;
+    height: 2.5rem !important;
+    margin: 0.5rem auto 0 !important;
+    width: 40% !important;
+}
+
+.button:hover{
+    background-color: #cf5a46 !important;
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Catamaran:300,400,500,600,700,800,900'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,500,600,700,800,900'>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/loginModal.css">
+    <link rel="stylesheet" href="styles/search.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <div id="header-container">
+        <header>
+            <h1><a href="index.html">RECIPEDIA</a></h1>
+            <img src="images/icons/menu.png" alt="Hamburger Menu Icon" id="hamburger-icon">
+            <nav id="navigation">
+                <ul>
+                    <li><a href="index.html" id="all-nav" class="active">All</a></li>
+                    <li><a href="#" id="meat-nav" class="">Meat</a></li>
+                    <li><a href="#" id="seafood-nav">Seafood</a></li>
+                    <li><a href="#" id="pasta-nav" class="">Pasta</a></li>
+                    <li><a href="#" id="vegetarian-nav" class="">Vegetarian</a></li>
+                    <li><a href="#" id="dessert-nav" class="">Dessert</a></li>
+                    <li><a href="#" id="login-button">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div id="search-container">
+        <div>
+            <form action="#" id="search">
+                <label for="search">Find a recipe</label>
+                <input type="text" name="search">
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <h2>All recipe</h2>
+        <div id="recipe-listing">
+            <a href="recipe-detail.html">
+                <figure>
+                    <div>
+                        <img srcset="images/recipe-covers/ancho-orange-chicken-large.jpg 800w,
+                                images/recipe-covers/ancho-orange-chicken-medium.jpg 500w,
+                                images/recipe-covers/ancho-orange-chicken-small.jpg 250w"
+                        sizes="(min-width: 900px) 30vw, 80vw"
+                        src="images/recipe-covers/ancho-orange-chicken-small.jpg"
+                        alt="Ancho-Orange Chicken"/>
+                    </div>
+                    <figcaption>Ancho-Orange Chicken</figcaption>
+                </figure>
+            </a>
+        </div>
+    </main>
+
+    <div id="login-modal-container">
+        <div id="login-modal">
+            <div id="login-header">
+                <div>
+                    <img src="images/icons/close.png" alt="Close Icon" id="close-icon">
+                </div>
+            </div>
+            <div id="login-content">
+                <div>
+                    <h2>Login</h2>
+                    <p>Please sign in to continue</p>
+                    <form>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password">
+                        <input type="submit" value="Login" class="button">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/toggleMenu.js"></script>
+    <script src="scripts/toggleLoginModal.js"></script>
+</body>
+</html>
