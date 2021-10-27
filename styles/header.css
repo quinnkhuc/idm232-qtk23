@@ -38,9 +38,9 @@ header img:hover{
 }
 
 nav{
+    display: none;
     font-weight: 300;
     grid-area: menu;
-    height: 0px;
     overflow: hidden;
     text-align: center;
 }
@@ -87,6 +87,7 @@ nav li:hover a{
     }
 
     nav{
+        display: block !important;
         grid-area: menu;
         height: 100% !important; 
         margin: 0 auto;

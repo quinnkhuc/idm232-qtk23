@@ -47,7 +47,7 @@ main{
 
 #recipe-listing a{
     display: block;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
 }
 
 @media(min-width: 600px){
