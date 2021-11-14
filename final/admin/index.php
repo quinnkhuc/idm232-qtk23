@@ -1,11 +1,7 @@
 <?php 
-    //Establish database connection
-    
-
     $page_title = "Admin Home";
-    include "../includes/header.php";
-    include "../includes/navigation.php";
-    include "../includes/search.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/header.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/includes/search.php";
 ?>
 <main>
     <div id="recipe-header">
@@ -35,5 +31,5 @@
     </div>
 </main>
 <?php 
-    include "../includes/footer.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/footer.php";
 ?>

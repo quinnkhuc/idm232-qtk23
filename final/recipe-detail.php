@@ -1,7 +1,6 @@
 <?php 
     $page_title = "Recipe";
-    include "includes/header.php";
-    include "includes/navigation.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/header.php";
 ?>
 
 <main>
@@ -104,5 +103,5 @@
     </div>
 </main>
 <?php 
-    include "includes/footer.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/footer.php";
 ?>

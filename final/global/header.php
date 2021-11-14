@@ -1,3 +1,7 @@
+<?php
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/config.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,4 +30,6 @@
     ?>
 </head>
 <body>
-    
+<?php 
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/includes/navigation.php";
+?>

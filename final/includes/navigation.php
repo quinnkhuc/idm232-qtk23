@@ -1,7 +1,7 @@
 <div id="header-container">
     <header>
-        <h1><a href="../index.php">RECIPEDIA</a></h1>
-        <img src="../images/icons/menu.png" alt="Hamburger Menu Icon" id="hamburger-icon">
+        <h1><a href="/index.php">RECIPEDIA</a></h1>
+        <img src="/images/icons/menu.png" alt="Hamburger Menu Icon" id="hamburger-icon">
         <nav id="navigation">
             <ul>
                 <li><a href="/index.php" id="all-nav" class="<?php 
@@ -16,7 +16,7 @@
                 <li><a href="#" id="dessert-nav" class="">Dessert</a></li>
                 <li><a href="/login.php" id="login-button" class="<?php 
                     if($page_title == "Login"){
-                            echo "active";
+                        echo "active";
                     }
                 ?>">Login</a></li>
             </ul>
@@ -36,3 +36,4 @@
         }
     });
 </script>
+    

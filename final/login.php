@@ -1,7 +1,6 @@
 <?php 
     $page_title = "Login";
-    include "includes/header.php";
-    include "includes/navigation.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/header.php";
 ?>
 <main>
     <h2>Login</h2>
@@ -13,3 +12,6 @@
         <input type="submit" value="Login" class="button">
     </form>
 </main>
+<?php 
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/global/footer.php";
+?>
