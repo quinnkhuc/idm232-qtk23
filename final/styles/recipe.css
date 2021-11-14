@@ -1,0 +1,63 @@
+h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+img{
+    height: auto;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+main{
+    color: #A64938;
+    line-height: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#recipe-content{
+    margin: 1rem auto;
+    width: 80%;
+}
+
+#recipe-content #description{
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: 1rem auto;
+}
+
+#recipe-header{
+    align-items: flex-end;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/ancho-orange-chicken/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 20rem;
+}
+
+#recipe-header div{
+    margin: 0 auto;
+    width: 80%;
+}
+
+#recipe-header h2{
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+}
+
+.recipe-step{
+    margin-top: 1rem;
+}
+
+@media(min-width: 900px){
+    .recipe-step{
+        align-items: center;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 50% 50%;
+    }
+}

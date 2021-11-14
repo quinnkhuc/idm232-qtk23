@@ -1,0 +1,61 @@
+a{
+    text-decoration: none;
+}
+
+figure{
+    margin: 1rem auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+figure div{
+    overflow: hidden;
+    width: 100%;
+}
+
+figure img{
+    transform: scale(1);
+	transition: .3s ease-in-out;
+}
+
+figure:hover img{
+    transform: scale(1.2);
+}
+
+figcaption{
+    color: #A64938;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+main{
+    color: #A64938;
+    font-weight: 600;
+    margin: 0 auto 2rem;
+    width: 80%;
+}
+
+@media(min-width: 600px){
+    #recipe-listing{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+    }
+}
+
+@media(min-width: 900px){
+    #recipe-listing{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
