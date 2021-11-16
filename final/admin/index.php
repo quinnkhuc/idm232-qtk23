@@ -2,34 +2,35 @@
     $page_title = "Admin Home";
     include_once $_SERVER["DOCUMENT_ROOT"] . "/global/header.php";
     include_once $_SERVER["DOCUMENT_ROOT"] . "/includes/search.php";
+    
+    //Build query
+    $query = "SELECT *";
+    $query .= "FROM recipes";
+    $results = mysqli_query($db_connection, $query);
+
 ?>
 <main>
     <div id="recipe-header">
-        <h2>All recipe</h2>
-        <button class="admin-button" onclick="window.location.href='create.php'">Add new recipe</button>
+        <h2>All recipes</h2>
+        <button id="create-recipe-button" class="admin-button">Add new recipe</button>
     </div>
-    <div id="recipe-listing">
-        <div class="recipe-detail">
-            <a href="/recipe-detail.php">
-                <figure>
-                    <div>
-                        <img srcset="../images/recipe-covers/ancho-orange-chicken-large.jpg 800w,
-                                ../images/recipe-covers/ancho-orange-chicken-medium.jpg 500w,
-                                ../images/recipe-covers/ancho-orange-chicken-small.jpg 250w"
-                        sizes="(min-width: 900px) 30vw, 80vw"
-                        src="../images/recipe-covers/ancho-orange-chicken-small.jpg"
-                        alt="Ancho-Orange Chicken"/>
-                    </div>
-                    <figcaption>Ancho-Orange Chicken</figcaption>
-                </figure>
-            </a>
-            <div class="adminTasks">
-                <button class="admin-button">Edit</button>
-                <button class="admin-button">Delete</button>
-            </div>
-        </div>
-    </div>
+
+    <?php
+        //Check if the results return anything
+        if($results && $results->num_rows >0){
+            include $_SERVER["DOCUMENT_ROOT"] . "/includes/recipe-listing.php";
+        }
+        else{
+            echo "There are currently no recipe in the database";
+        }
+    ?>
 </main>
 <?php 
     include_once $_SERVER["DOCUMENT_ROOT"] . "/global/footer.php";
 ?>
+<script>
+    let createRecipeButton = document.getElementById("create-recipe-button");
+    createRecipeButton.addEventListener("click", function(){
+        window.location.href='create.php';
+    });
+</script>

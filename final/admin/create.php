@@ -5,8 +5,8 @@
 <main>
     <h2>Add A New Recipe</h2>
     <form>
-        <label for="title">Title:*</label>
-        <input type="text" name="title" id="title" required>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
 
         <p id="category_label">Category:</p>
         <div class="category_option">
@@ -31,22 +31,22 @@
         </div>
 
         <label for="featured_photo" id="featured_photo_label">Featured Photo:*</label>
-        <input type="file" name="featured_photo" id="featured_photo" class="file_input" required>
+        <input type="file" name="featured_photo" id="featured_photo" class="file_input">
 
-        <label for="description">Description:*</label>
-        <textarea name="description" id="description" rows="8" cols="100" required></textarea>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" rows="8" cols="100"></textarea>
 
         <label for="ingredients_photo">Ingredients Photo:*</label>
-        <input type="file" name="ingredients_photo" id="ingredients_photo" class="file_input" required>
+        <input type="file" name="ingredients_photo" id="ingredients_photo" class="file_input">
 
-        <label for="ingredients_description">Ingredients Description:*</label>
-        <textarea name="ingredients_description" id="ingredients_description" rows="8" cols="100" required></textarea>
+        <label for="ingredients_description">Ingredients Description:</label>
+        <textarea name="ingredients_description" id="ingredients_description" rows="8" cols="100"></textarea>
 
-        <label for="step_1_photo">Step 1 Photo:*</label>
+        <label for="step_1_photo">Step 1 Photo:</label>
         <input type="file" name="step_1_photo" id="step_1_photo" class="file_input">
 
-        <label for="step_1_description">Step 1 Description:*</label>
-        <textarea name="step_1_description" id="step_1_description" rows="8" cols="100" required></textarea>
+        <label for="step_1_description">Step 1 Description:</label>
+        <textarea name="step_1_description" id="step_1_description" rows="8" cols="100"></textarea>
 
         <label for="step_2_photo">Step 2 Photo:</label>
         <input type="file" name="step_2_photo" id="step_2_photo" class="file_input">

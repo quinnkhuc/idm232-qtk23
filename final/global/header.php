@@ -1,6 +1,7 @@
 <?php
     require_once $_SERVER["DOCUMENT_ROOT"] . "/config.php";
     require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/database.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/helper.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
