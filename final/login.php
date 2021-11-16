@@ -6,9 +6,9 @@
     <h2>Login</h2>
     <form>
         <label for="email">Email:</label>
-        <input type="email" name="email">
+        <input type="email" name="email" id="email" required>
         <label for="password">Password:</label>
-        <input type="password" name="password">
+        <input type="password" name="password" id="password" required>
         <input type="submit" value="Login" class="button">
     </form>
 </main>

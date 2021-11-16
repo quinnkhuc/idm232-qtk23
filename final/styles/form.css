@@ -12,15 +12,16 @@ h2{
 }
 
 input{
-    background-color: #d6d6d6;
+    background-color: #ECECEC;
     border: none;
     height: 2rem;
     margin: 0.25rem 0 1rem;
     width: 100%;
 }
 
-label{
+label, p{
     color: #A64938;
+    display: block;
     font-size: 1.2rem;
     padding: 0;
     text-align: left;
@@ -28,22 +29,57 @@ label{
 
 main{
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+}
+
+textarea{
+    background-color: #ECECEC;
+    border: none;
+    margin: 0.25rem 0 1rem;
+    max-width: 100%;
+}
+
+#category_label{
+    margin-bottom: 0.25rem;
+}
+
+#featured_photo_label{
+    margin-top: 1rem;
 }
 
 .button{
     background-color: #A64938;
     color: #FFFFFF;
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: 2.5rem;
-    margin: 0 auto;
+    margin: 0.5rem auto 0;
     width: 40%;
 }
 
 .button:hover{
     background-color: #cf5a46;
     cursor: pointer;
+}
+
+.category_option{
+    margin-bottom: 0.25rem;
+}
+
+.file_input{
+    background: none;
+}
+
+.radio_input{
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    width: auto;
+}
+
+.radio_label{
+    font-size: 1rem;
+    display: inline-block;
 }
 
 @media(min-width: 600px){

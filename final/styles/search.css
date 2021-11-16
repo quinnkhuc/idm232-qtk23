@@ -23,6 +23,7 @@
 #search-container{
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/search.jpg);
     background-size: cover;
+    flex-shrink: 0;
     height: 20rem;
 }
 

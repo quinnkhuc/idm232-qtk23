@@ -1,3 +1,11 @@
-html{
+body{
+    box-sizing: border-box;
     font-family: Catamaran;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main{
+    flex: 1;
 }

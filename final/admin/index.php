@@ -6,11 +6,11 @@
 <main>
     <div id="recipe-header">
         <h2>All recipe</h2>
-        <button class="admin-button">Add new recipe</button>
+        <button class="admin-button" onclick="window.location.href='create.php'">Add new recipe</button>
     </div>
     <div id="recipe-listing">
         <div class="recipe-detail">
-            <a href="recipe-detail.php">
+            <a href="/recipe-detail.php">
                 <figure>
                     <div>
                         <img srcset="../images/recipe-covers/ancho-orange-chicken-large.jpg 800w,

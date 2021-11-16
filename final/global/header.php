@@ -22,12 +22,13 @@
             echo "<link rel=\"stylesheet\" href=\"../styles/search.css\">";
             echo "<link rel=\"stylesheet\" href=\"../styles/index.css\">";
             echo "<link rel=\"stylesheet\" href=\"../styles/admin.css\">";
-        } else if($page_title == "Login"){
-            echo "<link rel=\"stylesheet\" href=\"../styles/login.css\">";
+        } else if($page_title == "Login" || $page_title == "Add A New Recipe"){
+            echo "<link rel=\"stylesheet\" href=\"../styles/form.css\">";
         } else {
             echo "<link rel=\"stylesheet\" href=\"../styles/recipe.css\">";
         }
     ?>
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 <body>
 <?php 
