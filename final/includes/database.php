@@ -10,6 +10,6 @@
     //Check if connection has been successfully established
     if(!$db_connection){
         echo "Connection Error: " . mysqli_connect_error();
-        exit();
+        die;
     }
 ?>
