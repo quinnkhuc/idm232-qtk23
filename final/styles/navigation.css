@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+}
+
+header{
+    background-color: #A64938;
+    margin: 0 auto;
+    padding: 1.5rem 0 0;
+}
+
+header a{
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+nav{
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+nav li{
+    display: inline-block;
+}
+
+nav li a{
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    width: 6rem;
+}
+
+nav li a:hover{
+    background-color: #FFFFFF;
+    color: #A64938;
+}
+
+.active{
+    font-weight: 600;
+}
