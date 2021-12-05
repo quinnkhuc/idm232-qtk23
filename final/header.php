@@ -1,7 +1,6 @@
 <?php
     require_once "config.php";
     require_once "includes/database.php";
-    require_once "includes/helper.php";
     require_once "includes/functions.php";
 ?>
 <!DOCTYPE html>
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <?php 
-        if($page_title == "Home"){
+        if($page_title == "Home" || $page_title == "Pasta" ||  $page_title == "Meat" || $page_title == "Seafood" || $page_title == "Vegetarian" || $page_title == "Dessert" || $page_title == "Search Result" ){
             echo "<link rel=\"stylesheet\" href=\"styles/search.css\">";
             echo "<link rel=\"stylesheet\" href=\"styles/index.css\">";
         } else if($page_title == "Login" || $page_title == "Add A New Recipe" || $page_title == "Edit"){
@@ -27,6 +26,7 @@
         }
     ?>
     <link rel="stylesheet" href="styles/footer.css">
+    <script src="https://cdn.tiny.cloud/1/rbkgwjbarzymqqu84k0ovrb7zqwuj456p02ogl91ms0jbdkm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
 <?php 

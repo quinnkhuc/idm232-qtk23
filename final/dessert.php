@@ -1,17 +1,16 @@
 <?php 
-    $page_title = "Home";
+    $page_title = "Dessert";
     include_once "header.php";
     include_once "includes/search.php";
     
     //Build query
-    $query = "SELECT *";
-    $query .= "FROM recipes";
+    $query = "SELECT * FROM `recipes` WHERE category_id = 5 ";
     $results = mysqli_query($db_connection, $query);
 
 ?>
 <main>
     <div id="recipe-header">
-        <h2>All recipes</h2>
+        <h2>Dessert recipes</h2>
         <a href="create.php" id="create-button" class="admin-button">Add new recipe</a>
     </div>
 
@@ -21,7 +20,7 @@
             include "includes/recipe-listing.php";
         }
         else{
-            echo "<p id='no-recipe'>There is currently no recipe in the database.</p>";
+            echo "<p id='no-recipe'>There is currently no dessert recipe in the database.</p>";
         }
     ?>
 </main>

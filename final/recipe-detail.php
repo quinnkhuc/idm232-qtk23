@@ -16,12 +16,12 @@
         if($results && $results->num_rows > 0){
             $recipe = $row = mysqli_fetch_assoc($results);
         } else {
-            redirectTo("/index.php?error=" . mysqli_error($db_connection));
+            echo "<script> window.location = 'index.php?error';</script>";
         }
 
     } else {
         //Redirect user if no id is passed in URL
-        redirectTo("/index.php");
+        echo "<script> window.location = 'index.php';</script>";
     }
 
 ?>
@@ -32,77 +32,77 @@
         <h2><?php echo $recipe["title"] ?></h2>
     </div>
     <div id="recipe-content">
-        <p id="description"><?php echo $recipe["description"] ?></p>
+        <?php echo $recipe["description"] ?>
         <div class="recipe-step">
             <h3>Ingredients</h3>
-            <p><?php echo $recipe["ingredients_description"] ?></p>
+            <?php echo $recipe["ingredients_description"] ?>
         </div>
         
         <div class="recipe-step">
             <h3>Step 1</h3>
-            <p><?php echo $recipe["step_1_description"] ?></p>
+            <?php echo $recipe["step_1_description"] ?>
         </div>
 
         <?php if($recipe["step_2_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 2</h3>
-                <p><?php echo $recipe["step_2_description"] ?></p>
+                <?php echo $recipe["step_2_description"] ?>
             </div>
         <?php } ?>
         
         <?php if($recipe["step_3_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 3</h3>
-                <p><?php echo $recipe["step_3_description"] ?></p>
+                <?php echo $recipe["step_3_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_4_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 4</h3>
-                <p><?php echo $recipe["step_4_description"] ?></p>
+                <?php echo $recipe["step_4_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_5_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 5</h3>
-                <p><?php echo $recipe["step_5_description"] ?></p>
+                <?php echo $recipe["step_5_description"] ?>
             </div>
         <?php } ?>
         
         <?php if($recipe["step_6_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 6</h3>
-                <p><?php echo $recipe["step_6_description"] ?></p>
+                <?php echo $recipe["step_6_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_7_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 7</h3>
-                <p><?php echo $recipe["step_7_description"] ?></p>
+                <?php echo $recipe["step_7_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_8_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 8</h3>
-                <p><?php echo $recipe["step_8_description"] ?></p>
+                <?php echo $recipe["step_8_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_9_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 9</h3>
-                <p><?php echo $recipe["step_9_description"] ?></p>
+                <?php echo $recipe["step_9_description"] ?>
             </div>
         <?php } ?>
 
         <?php if($recipe["step_10_description"]){ ?>
             <div class="recipe-step">
                 <h3>Step 10</h3>
-                <p><?php echo $recipe["step_10_description"] ?></p>
+                <?php echo $recipe["step_10_description"] ?>
             </div>
         <?php } ?>
     </div>

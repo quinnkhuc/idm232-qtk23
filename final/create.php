@@ -39,14 +39,14 @@
                     // Get row from results and assign to $user variable;
                     $new_uploaded_img_id = mysqli_fetch_assoc($db_results)['id'];
                 } else {
-                    redirectTo('create.php?error=Could not find image in database');
+                    echo "<script> window.location = 'create.php?error=Could not find image in database';</script>";
                 }
             } else {
-                redirectTo('create.php?error=Error moving file');
+                echo "<script> window.location = 'create.php?error=Error moving file';</script>";
             }
         } else {
             // Error
-            redirectTo('create.php?error=' . mysqli_error($db_connection));
+            echo "<script> window.location = 'create.php?error';</script>";
         }
 
         //Continue submitting the rest of the form
@@ -54,6 +54,8 @@
         $title = mysqli_real_escape_string($db_connection, $_POST['title']);
 
         $featured_photo = (float)$new_uploaded_img_id;
+
+        $category_id = (int)mysqli_real_escape_string($db_connection, $_POST['category']);
         
         $description = mysqli_real_escape_string($db_connection, $_POST['description']);
 
@@ -81,16 +83,16 @@
         $current_date = getFormattedDateTime();
 
         //Build query
-        $query = "INSERT INTO `recipes` (`id`, `featured_photo`, `title`, `description`,`ingredients_description`, `step_1_description`, `step_2_description`, `step_3_description`, `step_4_description`, `step_5_description`, `step_6_description`, `step_7_description`, `step_8_description`, `step_9_description`, `step_10_description`, `date_created`, `date_updated`) VALUES (NULL, '{$featured_photo}', '{$title}', '{$description}', '{$ingredients_description}', '{$step_1_description}', '{$step_2_description}', '{$step_3_description}', '{$step_4_description}', '{$step_5_description}', '{$step_6_description}', '{$step_7_description}', '{$step_8_description}', '{$step_9_description}', '{$step_10_description}', '{$current_date}', '{$current_date}')";
+        $query = "INSERT INTO `recipes` (`id`, `featured_photo`, `category_id`, `title`, `description`,`ingredients_description`, `step_1_description`, `step_2_description`, `step_3_description`, `step_4_description`, `step_5_description`, `step_6_description`, `step_7_description`, `step_8_description`, `step_9_description`, `step_10_description`, `date_created`, `date_updated`) VALUES (NULL, '{$featured_photo}', '{$category_id}', '{$title}', '{$description}', '{$ingredients_description}', '{$step_1_description}', '{$step_2_description}', '{$step_3_description}', '{$step_4_description}', '{$step_5_description}', '{$step_6_description}', '{$step_7_description}', '{$step_8_description}', '{$step_9_description}', '{$step_10_description}', '{$current_date}', '{$current_date}')";
 
         //Execute query
         $db_results = mysqli_query($db_connection, $query);
         if ($db_results) {
             // Success
-            redirectTo('index.php');
+            echo "<script> window.location = 'index.php';</script>";
         } else {
             // Error
-            redirectTo('create.php?error=' . mysqli_error($db_connection));
+            echo "<script> window.location = 'create.php?error';</script>";
         }
 
     }
@@ -104,7 +106,29 @@
         <label for="featured_photo" id="featured_photo_label">Featured Photo:</label>
         <input type="file" name="featured_photo" id="featured_photo" class="file_input">
 
-        <label for="description">Description:</label>
+        <label for="category" id="category_label">Category:</label>
+        <div class="category_option">
+            <input type="radio" id="pasta" name="category" value="1" class="radio_input">
+            <label for="pasta" class="radio_label">Pasta</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="meat" name="category" value="2" class="radio_input">
+            <label for="meat" class="radio_label">Meat</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="seafood" name="category" value="3" class="radio_input">
+            <label for="seafood" class="radio_label">Seafood</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="vegetarian" name="category" value="4" class="radio_input">
+            <label for="vegetarian" class="radio_label">Vegetarian</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="dessert" name="category" value="5" class="radio_input">
+            <label for="dessert" class="radio_label">Dessert</label>
+        </div>
+        
+        <label for="description" id="description_label">Description:</label>
         <textarea name="description" id="description" rows="8" cols="100"></textarea>
 
         <label for="ingredients_description">Ingredients Description:</label>

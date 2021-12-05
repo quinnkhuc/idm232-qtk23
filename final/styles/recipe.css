@@ -7,7 +7,7 @@ h3{
 main{
     color: #A64938;
     line-height: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 #recipe-content{
@@ -15,20 +15,15 @@ main{
     width: 80%;
 }
 
-#recipe-content #description{
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    margin: 1rem auto;
-}
-
 #recipe-header img{
     max-height: 25rem;
-    width: 100%;
+    width: 100vw;
 }
 
 #recipe-header h2{
     font-size: 2rem;
     font-weight: 600;
+    line-height: 2.25rem;
     margin: 1rem auto;
     width: 80%;
 }

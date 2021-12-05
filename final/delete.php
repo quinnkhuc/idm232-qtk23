@@ -10,13 +10,13 @@
 
         $results = mysqli_query($db_connection, $query);
         if ($results) {
-            redirectTo('index.php?success=Recipe was deleted');
+            echo "<script> window.location = 'index.php';</script>";
         } else {
-            redirectTo('index.php?id=' . $_GET['id'] . '&error=' . mysqli_error($db_connection));
+            echo "<script> window.location = 'index.php?error';</script>";
         }
     } else {
         // Redirect user if no ID is passed in URL
-        redirectTo('index.php');
+        echo "<script> window.location = 'index.php';</script>";
     }
 ?>
 

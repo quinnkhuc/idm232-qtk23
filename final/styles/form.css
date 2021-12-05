@@ -14,8 +14,8 @@ h2{
 input{
     background-color: #ECECEC;
     border: none;
+    font-size: 1rem;
     height: 2rem;
-    margin: 0.25rem 0 1rem;
     width: 100%;
 }
 
@@ -23,7 +23,8 @@ label, p{
     color: #A64938;
     display: block;
     font-size: 1.2rem;
-    padding: 0;
+    padding-bottom: 0.25rem;
+    padding-top: 1rem;
     text-align: left;
 }
 
@@ -35,16 +36,15 @@ main{
 textarea{
     background-color: #ECECEC;
     border: none;
+    font-family: Catamaran;
+    font-size: 1rem;
     margin: 0.25rem 0 1rem;
     max-width: 100%;
 }
 
-#category_label{
-    margin-bottom: 0.25rem;
-}
-
-#featured_photo_label{
-    margin-top: 1rem;
+#title{
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
 }
 
 .button{
@@ -60,10 +60,6 @@ textarea{
 .button:hover{
     background-color: #cf5a46;
     cursor: pointer;
-}
-
-.category_option{
-    margin-bottom: 0.25rem;
 }
 
 .file_input{

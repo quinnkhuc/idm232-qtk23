@@ -8,10 +8,12 @@
 
         // Make sure GET ID == post ID
         if ($_GET['id'] != $recipe_id) {
-            redirectTo('edit.php?id=' . $_GET['id'] . '&error=User ID does not match current user.');
+            echo "<script> window.location = 'edit.php?error=User ID does not match current user';</script>";
         }
 
         $title = mysqli_real_escape_string($db_connection, $_POST['title']);
+
+        $category_id = (int)mysqli_real_escape_string($db_connection, $_POST['category']);
         
         $description = mysqli_real_escape_string($db_connection, $_POST['description']);
     
@@ -75,42 +77,42 @@
                         // Get row from results and assign to $user variable;
                         $new_uploaded_img_id = mysqli_fetch_assoc($db_results)['id'];
                     } else {
-                        redirectTo('edit.php?error=Could not find image in database');
+                        echo "<script> window.location = 'edit.php?error=Could not find image in database';</script>";
                     }
                 } else {
-                    redirectTo('edit.php?error=Error moving file');
+                    echo "<script> window.location = 'edit.php?error=Error moving file';</script>";
                 }
             } else {
                 // Error
-                redirectTo('edit.php?error=' . mysqli_error($db_connection));
+                echo "<script> window.location = 'edit.php?error';</script>";
             }
 
             $featured_photo = (float)$new_uploaded_img_id;
 
             //Build query
-            $query = "UPDATE `recipes` SET `featured_photo` = '{$featured_photo}', `title` = '{$title}', `description` = '{$description}', `ingredients_description` = '{$ingredients_description}', `step_1_description` = '{$step_1_description}', `step_2_description` = '{$step_2_description}', `step_3_description` = '{$step_3_description}', `step_4_description` = '{$step_4_description}', `step_5_description` = '{$step_5_description}', `step_6_description` = '{$step_6_description}', `step_7_description` = '{$step_7_description}', `step_8_description` = '{$step_8_description}', `step_9_description` = '{$step_9_description}', `step_10_description` = '{$step_10_description}', `date_updated` = '{$current_date}' WHERE `recipes`.`id` = $recipe_id"; 
+            $query = "UPDATE `recipes` SET `featured_photo` = '{$featured_photo}', `category_id` = '{$category_id}', `title` = '{$title}', `description` = '{$description}', `ingredients_description` = '{$ingredients_description}', `step_1_description` = '{$step_1_description}', `step_2_description` = '{$step_2_description}', `step_3_description` = '{$step_3_description}', `step_4_description` = '{$step_4_description}', `step_5_description` = '{$step_5_description}', `step_6_description` = '{$step_6_description}', `step_7_description` = '{$step_7_description}', `step_8_description` = '{$step_8_description}', `step_9_description` = '{$step_9_description}', `step_10_description` = '{$step_10_description}', `date_updated` = '{$current_date}' WHERE `recipes`.`id` = $recipe_id"; 
 
             //Execute query
             $db_results = mysqli_query($db_connection, $query);
             if ($db_results) {
                 // Success
-                redirectTo('index.php');
+                echo "<script> window.location = 'index.php';</script>";
             } else {
                 // Error
-                redirectTo('edit.php?error=' . mysqli_error($db_connection));
+                echo "<script> window.location = 'edit.php?error';</script>";
             }
         } else {
             //Build query
-            $query = "UPDATE `recipes` SET `title` = '{$title}', `description` = '{$description}', `ingredients_description` = '{$ingredients_description}', `step_1_description` = '{$step_1_description}', `step_2_description` = '{$step_2_description}', `step_3_description` = '{$step_3_description}', `step_4_description` = '{$step_4_description}', `step_5_description` = '{$step_5_description}', `step_6_description` = '{$step_6_description}', `step_7_description` = '{$step_7_description}', `step_8_description` = '{$step_8_description}', `step_9_description` = '{$step_9_description}', `step_10_description` = '{$step_10_description}', `date_updated` = '{$current_date}' WHERE `recipes`.`id` = $recipe_id"; 
+            $query = "UPDATE `recipes` SET `title` = '{$title}', `category_id` = '{$category_id}', `description` = '{$description}', `ingredients_description` = '{$ingredients_description}', `step_1_description` = '{$step_1_description}', `step_2_description` = '{$step_2_description}', `step_3_description` = '{$step_3_description}', `step_4_description` = '{$step_4_description}', `step_5_description` = '{$step_5_description}', `step_6_description` = '{$step_6_description}', `step_7_description` = '{$step_7_description}', `step_8_description` = '{$step_8_description}', `step_9_description` = '{$step_9_description}', `step_10_description` = '{$step_10_description}', `date_updated` = '{$current_date}' WHERE `recipes`.`id` = $recipe_id"; 
 
             //Execute query
             $db_results = mysqli_query($db_connection, $query);
             if ($db_results) {
                 // Success
-                redirectTo('index.php');
+                echo "<script> window.location = 'index.php';</script>";
             } else {
                 // Error
-                redirectTo('edit.php?error=' . mysqli_error($db_connection));
+                echo "<script> window.location = 'edit.php?error';</script>";
             }
         }
 
@@ -124,11 +126,11 @@
             $recipe = $row = mysqli_fetch_assoc($results);
         } else {
             // Redirect user if ID does not have a match in the DB
-            redirectTo('index.php');
+            echo "<script> window.location = 'index.php';</script>";
         }
     } else {
         // Redirect user if no ID is passed in URL
-        redirectTo('index.php');
+        echo "<script> window.location = 'index.php';</script>";
     }
 ?>
 <main>
@@ -140,7 +142,48 @@
         <label for="featured_photo" id="featured_photo_label">Featured Photo:</label>
         <input type="file" name="featured_photo" id="featured_photo" class="file_input">
 
-        <label for="description">Description:</label>
+        <label for="category" id="category_label">Category:</label>
+        <div class="category_option">
+            <input type="radio" id="pasta" name="category" value="1" class="radio_input" <?php if($recipe["category_id"] == 1){
+                echo "checked";
+            };?>
+            >
+            <label for="pasta" class="radio_label">Pasta</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="meat" name="category" value="2" class="radio_input"
+            <?php if($recipe["category_id"] == 2){
+                echo "checked";
+            };?>
+            >
+            <label for="meat" class="radio_label">Meat</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="seafood" name="category" value="3" class="radio_input"
+            <?php if($recipe["category_id"] == 3){
+                echo "checked";
+            };?>
+            >
+            <label for="seafood" class="radio_label">Seafood</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="vegetarian" name="category" value="4" class="radio_input"
+            <?php if($recipe["category_id"] == 4){
+                echo "checked";
+            };?>
+            >
+            <label for="vegetarian" class="radio_label">Vegetarian</label>
+        </div>
+        <div class="category_option">
+            <input type="radio" id="dessert" name="category" value="5" class="radio_input"
+            <?php if($recipe["category_id"] == 5){
+                echo "checked";
+            };?>
+            >
+            <label for="dessert" class="radio_label">Dessert</label>
+        </div>
+
+        <label for="description" id="description_label">Description:</label>
         <textarea name="description" id="description" rows="8" cols="100"><?php echo $recipe["description"]; ?></textarea>
 
         <label for="ingredients_description">Ingredients Description:</label>
