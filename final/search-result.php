@@ -21,7 +21,7 @@
 ?>
 <main>
     <div id="recipe-header">
-        <h2><?php echo $_GET['keyword'] ?></h2>
+        <h2>Search results for <?php echo $_GET['keyword'] ?></h2>
         <a href="create.php" id="create-button" class="admin-button">Add new recipe</a>
     </div>
 

@@ -1,0 +1,45 @@
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0 0;
+    width: 80%;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem 0 0.25rem;
+}
+
+html{
+    background-color: #A64938;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Catamaran;
+}
+
+img{
+    width: 100vw;
+}
+
+main{
+    margin: 0 auto 2rem;
+    width: 80%;
+}
+
+main img{
+    display: block;
+    margin: 1rem auto;
+    width: 80vw;
+}
+
+p{
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+#style-guide{
+    max-width: 600px;
+}
